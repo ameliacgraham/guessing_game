@@ -27,10 +27,11 @@ while True:
                     break
                 elif answer == "y":
                     print "you entered yes"
-                while answer != "y":
-                    print "Not a valid answer!"
-                    print "Please enter y or n"
-                    answer = raw_input("> ")
+                else:
+                    while answer != "y" or answer != "n":
+                        print "Not a valid answer!"
+                        print "Please enter y or n"
+                        answer = raw_input("> ")
 
 
         else:
