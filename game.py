@@ -10,12 +10,16 @@ guesses = 0
 guess = 101
 while True:
     guess = int(raw_input('Guess a number? '))
-    if guess < rand_num:
-        print "Your guess is too low, try again."
-        guesses += 1
-    elif guess > rand_num:
-        print "Your guess is too high, try again."
-        guesses += 1
+    if guess >= 1 and guess <= 100:
+        if guess < rand_num:
+            print "Your guess is too low, try again."
+            guesses += 1
+        elif guess > rand_num:
+            print "Your guess is too high, try again."
+            guesses += 1
+        else:
+            print "You guessed the right number! You found my number in %i tries" % (guesses)
+            break
     else:
-        print "You guessed the right number! You found my number in %i tries" % (guesses)
-        break
+        print "Oops, your guess was not between 1 and 100"
+        continue  
