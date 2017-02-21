@@ -28,7 +28,7 @@ while True:
                 elif answer == "y":
                     print "you entered yes"
                 else:
-                    while answer != "y" or answer != "n":
+                    while answer != "y" and answer != "n":
                         print "Not a valid answer!"
                         print "Please enter y or n"
                         answer = raw_input("> ")
