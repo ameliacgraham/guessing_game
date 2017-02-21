@@ -9,14 +9,8 @@ print "Hi %s!" % player_name # greet the player by their name
 guesses = 0
 guess = 101
 while True:
-    while True:
-        try:
-            guess = int(raw_input('Guess a number? '))
-            break
-        except ValueError:
-            print "Opps! That was not a number. Try again"
-            continue
-
+    try:
+        guess = int(raw_input('Guess a number? '))
         if guess >= 1 and guess <= 100:
             if guess < rand_num:
                 print "Your guess is too low, try again."
@@ -30,3 +24,8 @@ while True:
         else:
             print "Oops, your guess was not between 1 and 100"
             continue  
+    except ValueError:
+        print "Opps! That was not a number. Try again"
+        continue
+
+        
