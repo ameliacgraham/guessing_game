@@ -4,7 +4,7 @@ player_name = raw_input('What is your name? ')
 print "Hi %s!" % player_name # greet the player by their name
 
 while True:
-    rand_num = randint(1, 101)
+    rand_num = randint(1, 100)
 
     print 'Hello, welcome to the guessing game!'
 
@@ -24,7 +24,7 @@ while True:
                 else:
                     print "You guessed the right number! You found my number in %i tries" % (guesses)
                     print "Would you like to play again? y/n"
-                    answer = raw_input()
+                    answer = raw_input().lower()
                     if answer == "n":
                         break
                     elif answer == "y":
