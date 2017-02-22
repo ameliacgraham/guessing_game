@@ -2,13 +2,14 @@ from random import randint
 
 player_name = raw_input('What is your name? ')
 print "Hi %s!" % player_name # greet the player by their name
+scores = []
 
 while True:
     rand_num = randint(1, 100)
 
     print 'Hello, welcome to the guessing game!'
 
-    guesses = 0
+    num_of_guesses = 0
     guess = 101
     print rand_num 
     while True:
@@ -17,12 +18,13 @@ while True:
             if guess >= 1 and guess <= 100:
                 if guess < rand_num:
                     print "Your guess is too low, try again."
-                    guesses += 1
+                    num_of_guesses += 1
                 elif guess > rand_num:
                     print "Your guess is too high, try again."
-                    guesses += 1
+                    num_of_guesses += 1
                 else:
-                    print "You guessed the right number! You found my number in %i tries" % (guesses)
+                    scores.append(num_of_guesses)
+                    print "You guessed the right number! You found my number in %i tries" % (num_of_guesses)
                     print "Would you like to play again? y/n"
                     answer = raw_input().lower()
                     if answer == "n":
@@ -44,4 +46,6 @@ while True:
             print "Opps! That was not a number. Try again"
             continue
     if answer == "n":
+        scores.sort()
+        print "Your best score was %i" % (scores[0])
         break        
